@@ -34,3 +34,11 @@ pip install -U pip setuptools wheel
 # install requirements
 pip install -r requirements.txt
 ```
+
+# How does this work ?
+
+The script is based on the scan function of [scapy](https://scapy.net/).
+First, we filter the packets to process UDP packets of size between 100 and 1000 and going to the local ip address of our machine as their destination.
+Then, we check if the data section of the packet contains a magic string ("Skirmish").
+
+To select this packet and these filters, we observed the packets with [wireshark](https://www.wireshark.org/).
